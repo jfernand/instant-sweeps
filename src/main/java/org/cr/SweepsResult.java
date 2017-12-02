@@ -30,6 +30,7 @@ public class SweepsResult<T> {
 
     SweepsResult<T> merge(SweepsResult sweeps) {
         markMerge(sweeps);
+        assert entries == sweeps.entries;
         entries += sweeps.entries; //TODO this relies on the fact that merges seem to happen with equal-sized batches. Fix.
         return this;
     }
